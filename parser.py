@@ -99,7 +99,7 @@ class Parser:
 
         try:
             response = requests.get(url, headers=headers)
-            # response = grequests.get(url, headers=headers)
+        # except ConnectionError:
         except:
             print(f'{Bcolors.WARNING}Warning: requests.get({url}){Bcolors.ENDC}')
             return
