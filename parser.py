@@ -32,8 +32,9 @@ class Parser:
         self._cur_domain = None
         self._cur_check_url = None
         self._https = 'https://'
+        self._google = 'www.google.com/search?q='
 
-        self._count = 0
+        self._count = None
 
         self._save_file = 'result.json'
         self._re_domain = \
@@ -44,6 +45,7 @@ class Parser:
 
     def set_url(self, url: str) -> None:
         urls = {}
+
         if url is not None:
             url = url if self._check_domain(url) else f'{self._https}{url}'
             urls.update({url: {}})
@@ -51,6 +53,9 @@ class Parser:
 
     def set_deep(self, deep: int = 1) -> None:
         self._deep = deep
+
+    def set_google_search(self, search: str = 'python') -> None:
+        self.set_url(f'{self._https}{self._google}{search}')
 
     def print_result(self) -> None:
         print(json.dumps(self._urls, indent=4, ensure_ascii=False, sort_keys=True))
@@ -61,13 +66,21 @@ class Parser:
         with open(file, 'w') as json_file:
             json.dump(self._urls, json_file, indent=4, ensure_ascii=False, sort_keys=True)
 
+    def _get_counter(self) -> None:
+        return self._count
+
+    def _update_counter(self) -> None:
+        if self._count is None:
+            self._count = 0
+        self._count += 1
+        return self._get_counter()
+
     def _get_url(self, urls: dict, deep: int = 0) -> None:
         if deep < self._deep:
             deep += 1
 
             for url in urls:
-                self._count += 1
-                print(f'count: {self._count}\t| deep: {deep}\t| url: {url}')
+                print(f'count: {self._update_counter()}\t| deep: {deep}\t| url: {url}')
 
                 self._get_urls_from_page(url)
                 urls[url] = self._cur_parse_urls
@@ -99,8 +112,9 @@ class Parser:
 
         try:
             response = requests.get(url, headers=headers)
-        # except ConnectionError:
-        except:
+        # TODO: unknown error because ConnectionError does not fire if you send a one-word site address that
+        #  is not an actual domain name
+        except ConnectionError:
             print(f'{Bcolors.WARNING}Warning: requests.get({url}){Bcolors.ENDC}')
             return
 
@@ -137,3 +151,14 @@ if __name__ == '__main__':
 
     except (KeyboardInterrupt, SystemExit):
         print('Program was stopped by user.')
+
+    # # for Example:
+    # otus_parser_google = Parser()
+    # otus_parser_google.set_google_search('BeautifulSoup')
+    # otus_parser_google.set_deep = 3
+    #
+    # try:
+    #     otus_parser_google.run()
+    # except (KeyboardInterrupt, SystemExit):
+    #     print('Program was stopped by user.')
+
