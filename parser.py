@@ -48,8 +48,9 @@ class Parser:
 
         if url is not None:
             url = url if self._check_domain(url) else f'{self._https}{url}'
-            urls.update({url: {}})
-            self._urls = urls
+            # urls.update({url: {}})
+            # self._urls = urls
+            self._urls = {url: {}}
 
     def set_deep(self, deep: int = 1) -> None:
         self._deep = deep

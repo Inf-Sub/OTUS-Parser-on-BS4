@@ -1,18 +1,11 @@
 {
     "https://www.google.com/search?q=requests": {
-        "https://academy.yandex.ru/handbook/python/article/modul-requests": {
-            "https://forms.yandex.ru/surveys/13462036.81cd124e579a77d51f71961ad96ddfc74e7d34bc": {},
-            "https://forms.yandex.ru/surveys/academy/?proekt=handbooks": {},
-            "https://forms.yandex.ru/surveys/typo?handbook=python&article=modul-requests": {},
-            "https://new.contest.yandex.ru/41250": {},
-            "https://t.me/handbook_python": {},
-            "https://t.me/handbook_python/39": {},
-            "https://yandex.ru/dev/disk/poligon/": {},
-            "https://yandex.ru/dev/disk/rest/": {},
-            "https://yandex.ru/dev/id/doc/dg/oauth/reference/auto-code-client.html#auto-code-client__get-code": {},
-            "https://yandex.ru/dev/id/doc/dg/oauth/tasks/register-client.html": {},
-            "https://yandex.ru/dev/maps/commercial/doc/concepts/about-enterprise-docpage/": {},
-            "https://yandex.ru/dev/maps/staticapi/doc/1.x/dg/concepts/about.html": {}
+        "https://dvmn.org/encyclopedia/modules/requests/": {
+            "http://pythonicway.com/python-fileio": {},
+            "https://khashtamov.com/ru/python-requests/": {},
+            "https://slides.dvmn.org/voron434/requests/": {},
+            "https://vk.com/devmanorg": {},
+            "https://www.w3.org/Protocols/HTTP/1.1/draft-ietf-http-v11-spec-01#Status-Codes": {}
         },
         "https://en.wikipedia.org/wiki/Requests_(software)": {
             "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D9%83%D9%88%D9%8A%D8%B3%D8%AA%D8%B3_(%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A9)": {},
@@ -112,25 +105,16 @@
             "https://www.python.org/psf-landing/": {},
             "https://www.python.org/psf/sponsors/#microsoft": {}
         },
-        "https://pypi.org/project/requests/2.2.0/": {
-            "http://badge.fury.io/py/requests": {},
-            "http://docs.python-requests.org/": {},
-            "http://github.com/kennethreitz/requests": {},
+        "https://pypi.org/project/requests/2.1.0/": {
             "https://aws.amazon.com/": {},
             "https://careers.google.com/": {},
-            "https://crate.io/packages/requests/": {},
             "https://dtdg.co/pypi": {},
-            "https://files.pythonhosted.org/packages/3b/99/a8acc0c986281232f9476575c27a81ab697afbf089f42f05c196f51892c0/requests-2.2.0-py2.py3-none-any.whl": {},
-            "https://files.pythonhosted.org/packages/c9/5a/aa687599abd76de72ae5a554e2e70328fc311d59e0b1e999263fb094baf3/requests-2.2.0.tar.gz": {},
+            "https://files.pythonhosted.org/packages/1e/97/f0a8e5e71c75a2abf5ec91438b84ec1a40a5e1b5f985c06721a3ebe57c0a/requests-2.1.0-py2.py3-none-any.whl": {},
+            "https://files.pythonhosted.org/packages/51/5d/3729c242ed7693f29941fd9d40e936d4994b0aa704dfd0c023312fcce8a3/requests-2.1.0.tar.gz": {},
             "https://getsentry.com/for/python": {},
-            "https://gist.github.com/973705": {},
-            "https://github.com/kennethreitz/grequests": {},
-            "https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst": {},
-            "https://github.com/kennethreitz/requests/issues?direction=desc&labels=Contributor+Friendly&page=1&sort=updated&state=open": {},
             "https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md": {},
             "https://github.com/pypi/warehouse": {},
             "https://github.com/pypi/warehouse/graphs/contributors": {},
-            "https://github.com/shazow/urllib3": {},
             "https://hosted.weblate.org/projects/pypa/warehouse/": {},
             "https://libraries.io/pypi/requests": {},
             "https://packaging.python.org/": {},
@@ -149,7 +133,7 @@
             "https://www.python.org/psf-landing/": {},
             "https://www.python.org/psf/sponsors/#microsoft": {}
         },
-        "https://pypi.org/project/requests/2.5.1/": {
+        "https://pypi.org/project/requests/2.3.0/": {
             "http://badge.fury.io/py/requests": {},
             "http://docs.python-requests.org/": {},
             "http://github.com/kennethreitz/requests": {},
@@ -157,22 +141,13 @@
             "https://careers.google.com/": {},
             "https://crate.io/packages/requests/": {},
             "https://dtdg.co/pypi": {},
-            "https://files.pythonhosted.org/packages/54/9a/ee6051b19c62728d5467dead279c532798c287e39c3bc8becb1cfa9f525a/requests-2.5.1-py2.py3-none-any.whl": {},
-            "https://files.pythonhosted.org/packages/61/fe/2c0a4ca99c68ea24eec65d3094d6539d54635562678ee7a58420005c12b6/requests-2.5.1.tar.gz": {},
+            "https://files.pythonhosted.org/packages/ab/f9/4425c8410faf7c7d420dbd64e127f2cfb68cfef869a374b332610b6abc09/requests-2.3.0.tar.gz": {},
+            "https://files.pythonhosted.org/packages/f7/51/7aa1e337862118bee783c0249debd64cb07b8fbdfef154b1e185754b02d5/requests-2.3.0-py2.py3-none-any.whl": {},
             "https://getsentry.com/for/python": {},
             "https://gist.github.com/973705": {},
             "https://github.com/kennethreitz/grequests": {},
             "https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst": {},
-            "https://github.com/kennethreitz/requests/issues/2240": {},
-            "https://github.com/kennethreitz/requests/issues/2241": {},
-            "https://github.com/kennethreitz/requests/issues/2249": {},
             "https://github.com/kennethreitz/requests/issues?direction=desc&labels=Contributor+Friendly&page=1&sort=updated&state=open": {},
-            "https://github.com/kennethreitz/requests/pull/2227/": {},
-            "https://github.com/kennethreitz/requests/pull/2238": {},
-            "https://github.com/kennethreitz/requests/pull/2244": {},
-            "https://github.com/kennethreitz/requests/pull/2245/": {},
-            "https://github.com/kennethreitz/requests/pull/2248/": {},
-            "https://github.com/kennethreitz/requests/pull/2258": {},
             "https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md": {},
             "https://github.com/pypi/warehouse": {},
             "https://github.com/pypi/warehouse/graphs/contributors": {},
