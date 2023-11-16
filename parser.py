@@ -44,12 +44,8 @@ class Parser:
         self.set_deep(deep=deep)
 
     def set_url(self, url: str) -> None:
-        urls = {}
-
         if url is not None:
             url = url if self._check_domain(url) else f'{self._https}{url}'
-            # urls.update({url: {}})
-            # self._urls = urls
             self._urls = {url: {}}
 
     def set_deep(self, deep: int = 1) -> None:
@@ -58,8 +54,9 @@ class Parser:
     def set_google_search(self, search: str = 'python') -> None:
         self.set_url(f'{self._https}{self._google}{search}')
 
-    def print_result(self) -> None:
-        print(json.dumps(self._urls, indent=4, ensure_ascii=False, sort_keys=True))
+    def print_result(self, data: dict = None) -> None:
+        print_data = self._urls if data is None else data
+        print(json.dumps(print_data, indent=4, ensure_ascii=False, sort_keys=True))
 
     def save_result(self, file: str = None) -> None:
         if file is None:
@@ -71,20 +68,22 @@ class Parser:
         return self._count
 
     def _update_counter(self) -> None:
-        if self._count is None:
-            self._count = 0
-        self._count += 1
+        self._count = 1 if self._count is None else self._count + 1
         return self._get_counter()
 
+    def check_deep(self, deep: int) -> bool:
+        return True if (self._deep is not None and deep < self._deep) else False
+
     def _get_url(self, urls: dict, deep: int = 0) -> None:
-        if deep < self._deep:
+        if self.check_deep(deep):
             deep += 1
 
             for url in urls:
-                print(f'count: {self._update_counter()}\t| deep: {deep}\t| url: {url}')
+                print(f'\ncount: {self._update_counter()}\t| deep: {deep}\t| url:\t{url}\n')
 
                 self._get_urls_from_page(url)
                 urls[url] = self._cur_parse_urls
+                self.print_result(self._cur_parse_urls)
 
                 if urls[url]:
                     self._get_url(urls=urls[url], deep=deep)
@@ -118,6 +117,8 @@ class Parser:
         except ConnectionError:
             print(f'{Bcolors.WARNING}Warning: requests.get({url}){Bcolors.ENDC}')
             return
+        except requests.exceptions.SSLError:
+            return
 
         if response.status_code != 200:
             print(f'{Bcolors.WARNING}Warning: Response Status Code: {response}\tURL: {url}{Bcolors.ENDC}')
@@ -138,7 +139,7 @@ class Parser:
 
 if __name__ == '__main__':
     start_url = r'https://www.google.com/search?q=requests'
-    immersion_depth = 2
+    immersion_depth = 3
 
     otus_parser = Parser(url=start_url, deep=immersion_depth)
 
